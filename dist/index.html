@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="">
+    <!-- CSS only for FontAwesome -->
+    <!-- <link rel="stylesheet" href="../../node_modules/jquery/dist/jquery.min.js" /> -->
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- CSS only for Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <title>Lab_2</title>
+</head>
+<body>
+<header class="bg-danger">
+    <div class="container">
+        <div class="nav nav-extend-md align-items-center">
+            <a href="#" target="_blank"><img src="../images/logo.png" alt="" class="logo" width="100"></a>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <p>Функционал недоступен</p>
+                </div>
+              </div>
+              
+            <button id="myBtn">Собачки</button>
+        </div>
+    </div>
+</header>
+<section>
+    <div class="container mb-5">
+        <h1>Собачки</h1>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+            <div class="col mb-5">
+                <div class="card" data-bs-toggle="modal" data-bs-num="0"
+                     data-bs-target="#exampleModal">
+                    <img class="card-img-top img-fluid" src="https://www.purinaone.ru/sites/default/files/styles/image_576/public/2021-10/%D1%87%D0%B0%D1%83-%D1%87%D0%B0%D1%83%20%281000%D1%85n%203%29.jpg?itok=u-WTXibM" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Чау-чау</h5>
+                        <p class="card-text">Эта порода относится к числу древнейших. Она зародилась в Древнем Китае более 2000 лет назад. Изначально эти мощные и крепкие животные использовались для охоты и выполнения охранных функций. Со временем охотничье предназначение чау-чау отошло на задний план, и эти собаки стали восприниматься как декоративные собаки или как собаки-компаньоны.
+                            Чау-чау – одна из древнейших пород: ее зарождение проихошло в Древнем Китае более 2000 лет назад. Считается, что чау-чау эволюционировали от волков, жиущих в засушливых степях северного Китая и Монголии. Позже эту породу стали использовать в качестве охотничей и даже ездовой. Чистокровных чау-чау содержали в буддийских монастырях. Там же занимались разведением породы.                       
+                            В Англии чау-чау появились в 1830-x годах. Именно английские заводчики и занялись лучшением этой породы. Современный стандарт чау-чау – это полностью продукт британской селекции.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" data-bs-toggle="modal" data-bs-num="1"
+                     data-bs-target="#exampleModal">
+                    <img class="card-img-top img-fluid" src="data:image/jpeg;base64,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" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Чихуахуа</h5>
+                        <p class="card-text">Чихуахуа – декоративные собаки экстремально малого размера. Бесконечно преданы хозяину и чрезвычайно самолюбивы. Входят в топ-10 наиболее популярных пород в мире.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" data-bs-toggle="modal" data-bs-num="2"
+                     data-bs-target="#exampleModal">
+                    <img class="card-img-top" src="https://lapkins.ru/upload/iblock/305/3052ffceecb0392a4bd66c672ac78a71.jpg" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Йорк</h5>
+                        <p class="card-text">Йоркширский терьер, или йорк, — порода декоративных собак, выведенная в Англии, в графстве Йоркшир в конце XIX века, на основе таких пород как манчестер-терьер, скайтерьер, мальтезе и др. В настоящее время йоркширский терьер — одна из самых популярных комнатно-декоративных пород собак. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" data-bs-toggle="modal" data-bs-num="3"
+                     data-bs-target="#exampleModal">
+                    <img class="card-img-top img-fluid" src="https://lifehacker.ru/wp-content/uploads/2020/02/Depositphotos_37979745_l-2015_1581940481-e1581940509543.jpg" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Хаски</h5>
+                        <p class="card-text">Сибирский хаски — заводская специализированная порода собак, выведенная чукчами северо-восточной части Сибири и зарегистрированная американскими кинологами в 1930-х годах как ездовая собака, полученная от аборигенных собак Дальнего Востока России, в основном из Анадыря, Колымы, Камчатки у местных оседлых приморских племён — юкагиров, кереков, азиатских эскимосов и приморских чукчей — анкальын (приморские, поморы — от анкы (море)).</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" data-bs-toggle="modal" data-bs-num="4"
+                     data-bs-target="#exampleModal">
+                    <img class="card-img-top img-fluid" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Binka_10_06.jpg/440px-Binka_10_06.jpg" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Далматинец</h5>
+                        <p class="card-text">Далмати́н, или далматская собака, — порода собак, выведенная в Хорватии. Название породы дала историческая область Далмация на Балканском полуострове. Собаки, имеющие в окрасе пятна и очень похожие на современных далматинов, были известны ещё в древние времена, например, археологические раскопки в Греции позволили увидеть разнообразные картины, на которых, наряду с людьми, были изображены очень похожие на современных далматинов собаки.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="bg-danger">
+    <div class="container">
+        <div class="nav align-items-center">
+            <div><p>Galkin Danil</p></div>
+        </div>
+    </div>
+</footer>
+<div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="BullyLabel">Описание</h5>
+            </div>
+            <div class="modal-body"></div>
+        </div>
+    </div>
+</div>
+<script>
+    var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+    var toastList = toastElList.map(function (toastEl) {
+        return new bootstrap.Toast(toastEl, {delay: 1500})
+    });
+    var notEmplErr = toastList[0];
+
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl)
+    })
+
+    var currentModal = 0;
+    var modalText = ["Эта порода относится к числу древнейших. Она зародилась в Древнем Китае более 2000 лет назад. Изначально эти мощные и крепкие животные использовались для охоты и выполнения охранных функций. Со временем охотничье предназначение чау-чау отошло на задний план, и эти собаки стали восприниматься как декоративные собаки или как собаки-компаньоны.Чау-чау – одна из древнейших пород: ее зарождение проихошло в Древнем Китае более 2000 лет назад. Считается, что чау-чау эволюционировали от волков, жиущих в засушливых степях северного Китая и Монголии. Позже эту породу стали использовать в качестве охотничей и даже ездовой. Чистокровных чау-чау содержали в буддийских монастырях. Там же занимались разведением породы. В Англии чау-чау появились в 1830-x годах. Именно английские заводчики и занялись лучшением этой породы. Современный стандарт чау-чау – это полностью продукт британской селекции.</p>"+ 
+    `  <a href='#' data-bs-toggle="popover" title="Popover title" data-bs-content="Здесь должен быть контент">Подсказка</a>`
+        ,
+        "Чихуахуа – декоративные собаки экстремально малого размера. Бесконечно преданы хозяину и чрезвычайно самолюбивы. Входят в топ-10 наиболее популярных пород в мире." +
+        ` <a href='#' data-bs-toggle="popover" title="Popover title" data-bs-content="Здесь должен быть контент">Подсказка</a>`
+        ,
+        "Йоркширский терьер, или йорк, — порода декоративных собак, выведенная в Англии, в графстве Йоркшир в конце XIX века, на основе таких пород как манчестер-терьер, скайтерьер, мальтезе и др. В настоящее время йоркширский терьер — одна из самых популярных комнатно-декоративных пород собак." +
+        `<a href='#' data-bs-toggle="popover" title="Popover title" data-bs-content="Здесь должен быть контент">Подсказка</a>`
+        ,
+        "Сибирский хаски — заводская специализированная порода собак, выведенная чукчами северо-восточной части Сибири и зарегистрированная американскими кинологами в 1930-х годах как ездовая собака, полученная от аборигенных собак Дальнего Востока России, в основном из Анадыря, Колымы, Камчатки у местных оседлых приморских племён — юкагиров, кереков, азиатских эскимосов и приморских чукчей — анкальын (приморские, поморы — от анкы (море))." +
+        `<a href='#' data-bs-toggle="popover" title="Popover title" data-bs-content="Здесь должен быть контент">Подсказка</a>`
+        ,
+        "Далмати́н, или далматская собака, — порода собак, выведенная в Хорватии. Название породы дала историческая область Далмация на Балканском полуострове. Собаки, имеющие в окрасе пятна и очень похожие на современных далматинов, были известны ещё в древние времена, например, археологические раскопки в Греции позволили увидеть разнообразные картины, на которых, наряду с людьми, были изображены очень похожие на современных далматинов собаки." +
+        `<a href='#' data-bs-toggle="popover" title="Popover title" data-bs-content="Здесь должен быть контент">Подсказка</a>`
+    ]
+    var modalCount = modalText.length;
+    var exampleModal = document.getElementById('exampleModal')
+    function showInfo(i) {
+        if(i >= 0) i = i % modalCount;
+        else i = modalCount - 1;
+        var modalParagraph = exampleModal.querySelector('.modal-body');
+        let text = modalText[i];
+        modalParagraph.innerHTML = text
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl)
+        })
+        currentModal = i;
+    }
+    exampleModal.addEventListener('show.bs.modal', function (event) {
+        // Button that triggered the modal
+        let button = event.relatedTarget
+        // Extract info from data-bs-* attributes
+        let num = button.getAttribute('data-bs-num')
+        // If necessary, you could initiate an AJAX request here
+        // and then do the updating in a callback.
+        //
+        // Update the modal's content.
+        showInfo(num);
+    });
+    exampleModal.addEventListener("keydown", event => {
+        if (event.code === "ArrowLeft") {
+            showInfo(currentModal - 1);
+            //перекл влево;
+        } else if (event.code === "ArrowRight") {
+            showInfo(currentModal + 1);
+            //перекл вправо;
+        }
+    });
+    $(document).ready(function() {
+    // При клике на кнопку, открываем модальное окно
+    $("#myBtn").click(function() {
+      $("#myModal").css("display", "block");
+    });
+  
+    // При клике на крестик, закрываем модальное окно
+    $(".close").click(function() {
+      $("#myModal").css("display", "none");
+    });
+  
+    // При клике вне модального окна, закрываем его
+    $(window).click(function(event) {
+      if (event.target.id == "myModal") {
+        $("#myModal").css("display", "none");
+      }
+    });
+  });
+</script>
+<script src="main.js"></script>
+</body>
+</html>
