@@ -16,21 +16,41 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <title>Lab_2</title>
 </head>
+<style>
+    textarea {
+    width: 50%;
+    padding: 0 20px;
+    margin-top: 10px !important;
+    background: rgb(255, 255, 255);
+    line-height: 40px;
+    border-width: 1;
+    border-radius: 20px;
+    font-family: 'Roboto', sans-serif;
+    }
+    .container-feedback{
+    display: flex;
+    align-items: center;
+    }
+    .LoadButton
+    {
+        position: relative;
+        left: 900px;
+        color: wheat;
+        background-color:wheat;
+    }
+</style>
 <body>
 <header class="bg-danger">
     <div class="container">
         <div class="nav nav-extend-md align-items-center">
             <a href="#" target="_blank"><img src="../images/logo.png" alt="" class="logo" width="100"></a>
-            <div id="myModal" class="modal">
-                <div class="modal-content">
-                  <span class="close">&times;</span>
-                  <p>Функционал недоступен</p>
-                </div>
-              </div>
-              
-            <button id="myBtn">Собачки</button>
-        </div>
-    </div>
+            <div class = "LoadButton">
+                    <li class="nav-item">
+                    <a href="#" class="btn" data-bs-dismiss="toast" aria-label="Закрыть">Загрузить</a>
+                    </li>
+            </div>       
+        </div> 
+    </div>            
 </header>
 <section>
     <div class="container mb-5">
@@ -108,6 +128,14 @@
             <div class="modal-body"></div>
         </div>
     </div>
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+        <div class="toast" role="alert" id="notification">
+          <div class="toast-body text-left">
+            В данный момент этот функционал недоступен
+          </div>
+        </div>
+      </div>
+    
 </div>
 <script>
     var toastElList = [].slice.call(document.querySelectorAll('.toast'))
@@ -137,6 +165,7 @@
         "Далмати́н, или далматская собака, — порода собак, выведенная в Хорватии. Название породы дала историческая область Далмация на Балканском полуострове. Собаки, имеющие в окрасе пятна и очень похожие на современных далматинов, были известны ещё в древние времена, например, археологические раскопки в Греции позволили увидеть разнообразные картины, на которых, наряду с людьми, были изображены очень похожие на современных далматинов собаки." +
         `<a href='#' data-bs-toggle="popover" title="Popover title" data-bs-content="Здесь должен быть контент">Подсказка</a>`
     ]
+    
     var modalCount = modalText.length;
     var exampleModal = document.getElementById('exampleModal')
     function showInfo(i) {
@@ -189,7 +218,18 @@
       }
     });
   });
+  src="js/toastjs.js"
 </script>
 <script src="main.js"></script>
+<script>
+    var toastTrigger = document.getElementById('liveToastBtn');
+    var toastLiveExample = document.getElementById('liveToast');
+    if (toastTrigger) {
+        const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+        toastTrigger.addEventListener('click', () => {
+        toastBootstrap.show()
+        })
+    }
+</script>
 </body>
 </html>
