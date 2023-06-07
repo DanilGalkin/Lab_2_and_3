@@ -27,10 +27,10 @@
     border-radius: 20px;
     font-family: 'Roboto', sans-serif;
     }
-    .container-feedback{
+    /* .container-feedback{
     display: flex;
     align-items: center;
-    }
+    } */
     .LoadButton
     {
         position: relative;
@@ -38,19 +38,34 @@
         color: wheat;
         background-color:wheat;
     }
+    .containerf{
+        background-color:wheat;
+    }
 </style>
 <body>
-<header class="bg-danger">
-    <div class="container">
-        <div class="nav nav-extend-md align-items-center">
-            <a href="#" target="_blank"><img src="../images/logo.png" alt="" class="logo" width="100"></a>
-            <div class = "LoadButton">
-                    <li class="nav-item">
-                    <a href="#" class="btn" data-bs-dismiss="toast" aria-label="Закрыть">Загрузить</a>
-                    </li>
-            </div>       
-        </div> 
-    </div>            
+    <header class="bg-info">
+        <div class="container">
+            <div class="nav nav-extend-md align-items-center">
+                <a href="#" target="_blank"><img src="https://w1.pngwing.com/pngs/123/289/png-transparent-dog-silhouette-logo-black-breed-black-m-black-and-white-tail.png" alt="" class="logo" width="100"></a>
+                <a class="h-25 ms-5" href="#" target="_blank">Информация о собаках</a>
+                <button onclick="notEmplErr.show()" class="btn btn-primary ms-auto">
+                    Загрузить
+                </button>
+                <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 5">
+                    <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header">
+                            <p><i class="fa fa-spinner fa-pulse fa-3x"></i></p>
+                            <strong class="me-auto">Функционал</strong>
+                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
+                            Функионал временно недоступен
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 </header>
 <section>
     <div class="container mb-5">
@@ -111,7 +126,7 @@
         </div>
     </div>
 </section>
-<footer class="bg-danger">
+<footer class="bg-danger"  >
     <div class="container">
         <div class="nav align-items-center">
             <div><p>Galkin Danil</p></div>
@@ -231,5 +246,17 @@
         })
     }
 </script>
+<script>
+    const toastTrigger = document.getElementById('liveToastBtn')
+    const toastLiveExample = document.getElementById('liveToast')
+    if (toastTrigger) {
+    toastTrigger.addEventListener('click', () => {
+        const toast = new bootstrap.Toast(toastLiveExample)
+
+        toast.show()
+    })
+}
+    </script>
+    
 </body>
 </html>
